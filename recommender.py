@@ -36,12 +36,11 @@ class RecSys:
         # calculating predicted rating:
         user_ratings = self.util_mat[user_idx].toarray().ravel()
         rated_items = np.where(user_ratings > 0)[0]
-        # print(f"User {user_idx} rated items: {rated_items}")
+        
         if len(rated_items) == 0:
-            # print(f"User {user_idx} has not rated any items.")
             global_mean = self.util_mat.data.mean()  # All ratings mean
             return global_mean
-            # return 0  # No history available
+            
 
         # Get similarities between target item and items rated by user
         similarities = self.sim_mat[item_idx, rated_items].toarray().ravel()

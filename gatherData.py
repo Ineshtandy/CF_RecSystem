@@ -33,7 +33,7 @@ class GatherData:
 
         return utility_matrix
     
-    def preprocess_testSet(self,test_df, user_encoder, book_encoder):
+    def preprocess_testSet(self,test_df, user_encoder, book_encoder):   # irrelevant function used during prototyping
         test_df = test_df[
             test_df['User-ID'].isin(user_encoder.classes_) &
             test_df['ISBN'].isin(book_encoder.classes_)
@@ -73,7 +73,7 @@ class GatherData:
 
         return ret_mat, test_data
     
-    def create_util_mat(self, train_df):
+    def create_util_mat(self, train_df):    # irrelevant function used during prototyping
         n_users = train_df['user_idx'].nunique()
         n_books = train_df['book_idx'].nunique()
 
